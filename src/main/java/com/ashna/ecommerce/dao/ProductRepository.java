@@ -13,4 +13,5 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RepositoryRestResource(collectionResourceRel = "productCategory", path = "product-category")
 public interface ProductRepository extends JpaRepository<ProductCategory, Long> {
         Page<Product> findByCategoryId(@RequestParam("id") Long id, Pageable pageable);
+        Page<Product> findByNameContaining(@RequestParam("name") String name, Pageable pageable);
 }
